@@ -1,0 +1,48 @@
+grammar org.xtext.cs130.activity.Activity with org.eclipse.xtext.common.Terminals
+
+generate activity "http://www.xtext.org/cs130/activity/Activity"
+
+Activity:
+	(type=[DeclaredParticipant])? 'activity' name=ID ('{'
+		(declaredParticipants+=DeclaredParticipant)*
+		(activities+=Events)+
+'}');
+
+
+DeclaredParticipant:
+	'participant' name=ID
+;
+
+Events:
+	IfElseStatement | Fork | Actions
+;
+
+Actions:
+	(type=[DeclaredParticipant])? name=STRING
+;
+
+IfElseStatement:
+	(type=[DeclaredParticipant])? 'if' name=STRING 'then' '"yes"' ('{'
+		yesEvent +=	(IFElseBranchEventType)+
+	'}') 'else' '"no"' ('{'	
+		noEvent += (IFElseBranchEventType)+
+	'}')
+;
+
+IFElseBranchEventType:
+	IfElseStatement | Fork | Actions
+;
+
+Fork:
+	(type=[DeclaredParticipant])? 'fork' ('{'
+		forkEvent+=(Branchs)+
+	'}')
+;
+
+Branchs:
+	'branch' ('{'
+		branchEvent += (IFElseBranchEventType)+
+	'}')
+;
+
+	
