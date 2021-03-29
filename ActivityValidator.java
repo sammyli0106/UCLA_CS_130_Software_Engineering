@@ -23,17 +23,14 @@ import org.xtext.cs130.activity.activity.IfElseStatement;
  */
 public class ActivityValidator extends AbstractActivityValidator {
 	
-	// TODO: Write a warning that if a participant is declared but not used anywhere
-		// For example, declared "participant p2" in activity body; but p2 is not used in if else, fork, action at all 
-	// TODO: Write an error if participants are declared bu the activity does not reference one of them 
-		// For example, declared "participant p1"; but "activity Activity1", should be "p1 activity Activity1"
+
 	
 	public static final String PARTICIPANT_DECLARED_NO_REFERENCED = "ParticipantDeclaredNoReferenced";
 	public static final String PARTICIPANT_DECLARED_NO_USED = "ParticipantDeclaredNoUsed";
 	public static final String PARTICIPANT_NOT_DECLARED_USED = "ParticipantNotDeclaredUsed";
 	
 	
-	// ------------------------------------ already finished work below -------------------------------------
+	// -------------------------------------------------------------------------
 	
 	// Warning function: If a participant is declared but not used anywhere 
 	
