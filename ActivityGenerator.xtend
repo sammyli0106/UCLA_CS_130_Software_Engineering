@@ -5,7 +5,6 @@ package org.xtext.cs130.activity.generator
 
 import org.eclipse.emf.ecore.resource.Resource
 
-// Change participant to declared participant
 
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
@@ -26,9 +25,6 @@ import org.xtext.cs130.activity.activity.DeclaredParticipant
  */
 class ActivityGenerator extends AbstractGenerator {
 	
-	// Todo: I might have to refix the grammar and add/alter more here (done)
-	// Todo: I need to add in check null statements for some of the cases here (done)
-	// Todo: I need to add the handle of start actions from grammar into here (done)
 	
 	var numOfFork = 0;
 	
